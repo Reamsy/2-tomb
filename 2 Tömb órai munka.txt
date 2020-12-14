@@ -1,0 +1,45 @@
+/*
+ * 
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication1;
+    import java.util.Scanner;
+/**
+ *
+ * @author Szalanics Szabolcs
+ */
+public class JavaApplication1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner bemenet = new Scanner(System.in);
+        int elemek;
+        System.out.println("Adja meg hogy hány elemből álljanak a tömbök: \n");
+        elemek = bemenet.nextInt();
+        
+        int tomb1[] = new int[elemek];
+        int tomb2[] = new int[elemek];
+        
+        for (int i = 0; i < elemek; i++) {
+            tomb1[i] = (int) (Math.random()*999+1);
+            tomb2[i] = (int) (Math.random()*999+1);
+            }
+        
+        System.out.println("A tömbök elemei pedig: \n");
+        for (int i = 0; i < elemek; i++) {
+            int osszeg = 0;
+            osszeg = tomb1[i] + tomb2[i];
+            System.out.print(i+1+".: ");
+            System.out.print(String.format("%,3d",tomb1[i])+ " + ");
+            System.out.print(String.format("%,3d",tomb2[i])+ " = ");
+            System.out.println(String.format("%,5d",osszeg));
+            
+            }
+        
+        bemenet.close();
+    }
+    
+}
